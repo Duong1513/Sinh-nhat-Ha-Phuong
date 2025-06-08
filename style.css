@@ -1,0 +1,318 @@
+/* Переменные для легкой настройки цветов */
+:root {
+    --glow-color: hsl(279, 79%, 71%);
+    --glow-spread-color: hsla(279, 79%, 71%, 0.781);
+    --enhanced-glow-color: hsla(279, 79%, 60%, 0.233);
+    --text-color: #f0f0f0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text-color);
+    background-color: #0c0012;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Ẩn scroll ban đầu */
+}
+
+/* Hiệu ứng nền cực quang */
+.aurora-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.aurora {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(80px);
+    animation: aurora-move linear infinite;
+}
+
+.aurora-1 {
+    width: 400px;
+    height: 400px;
+    background-color: #ff00ff; /* Magenta */
+    top: -10%;
+    left: -10%;
+    animation-duration: 20s;
+}
+
+.aurora-2 {
+    width: 500px;
+    height: 500px;
+    background-color: #00ffff; /* Cyan */
+    top: 20%;
+    right: -20%;
+    animation-duration: 25s;
+    animation-direction: reverse;
+}
+
+.aurora-3 {
+    width: 350px;
+    height: 350px;
+    background-color: #7f00ff; /* Violet */
+    bottom: -15%;
+    left: 10%;
+    animation-duration: 18s;
+}
+
+.aurora-4 {
+    width: 300px;
+    height: 300px;
+    background-color: #ff7f00; /* Orange */
+    bottom: 5%;
+    right: 15%;
+    animation-duration: 22s;
+    animation-direction: reverse;
+}
+
+@keyframes aurora-move {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50% { transform: translate(100px, 150px) rotate(180deg) scale(1.5); }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+/* Màn hình chào mừng */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    transition: opacity 1.5s ease, visibility 1.5s ease;
+    text-align: center;
+}
+
+#open-button {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    margin-top: 30px;
+}
+
+#open-button:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #0c0012;
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
+}
+
+/* Hiệu ứng chữ phát sáng */
+.glowing-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glowing-text-main {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--glow-color), 0 0 82px var(--glow-color), 0 0 92px var(--glow-color), 0 0 102px var(--glow-color), 0 0 151px var(--glow-color);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--glow-color), 0 0 40px var(--glow-color), 0 0 50px var(--glow-color), 0 0 60px var(--glow-color), 0 0 70px var(--glow-color);
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px var(--secondary-color), 0 0 40px var(--secondary-color), 0 0 50px var(--secondary-color), 0 0 60px var(--secondary-color), 0 0 70px var(--secondary-color), 0 0 80px var(--secondary-color);
+    }
+}
+
+/* Nội dung chính */
+.main-content {
+    display: none;
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+#main-title {
+    min-height: 100px;
+    margin-bottom: 50px;
+}
+
+/* Cây thông tin */
+.info-tree {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(26, 11, 36, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Hiệu ứng viền phát sáng khi hover */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 180deg at 50% 50%, var(--glow-color) 0%, var(--glow-spread-color) 30%, var(--enhanced-glow-color) 50%, var(--glow-spread-color) 70%, var(--glow-color) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: rotate-glow 4s linear infinite;
+    z-index: -1;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+@keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.card-icon {
+    font-size: 3rem;
+}
+
+.card h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-family: 'Great Vibes', cursive;
+    margin: 15px 0 10px;
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+/* Thư viện ảnh và các section khác */
+.gallery-section, .music-section {
+    margin-top: 80px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.08);
+    border-color: var(--glow-color);
+    box-shadow: 0 0 20px var(--glow-spread-color);
+}
+
+#music-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+#music-button:hover {
+    background: var(--glow-color);
+    box-shadow: 0 0 25px var(--glow-color);
+    transform: scale(1.1);
+}
+
+/* Modal xem ảnh */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    animation: zoomIn 0.6s;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Hiệu ứng xuất hiện khi cuộn */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hidden.show {
+    opacity: 1;
+    transform: translateY(0);
+}

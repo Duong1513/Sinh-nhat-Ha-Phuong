@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật nha công chúa Nguyễn Hà Phương</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="aurora aurora-4"></div>
+    </div>
+
+    <div class="welcome-screen" id="welcome-screen">
+        <h1 class="glowing-text">Đây là một món quà đặc biệt mà Hà Bảo Nam dành cho em...</h1>
+        <button id="open-button">🎁 Mở nó ra nhé? 🎁</button>
+    </div>
+
+    <main class="main-content" id="main-content">
+        <h2 id="main-title" class="glowing-text-main"></h2>
+        
+        <div class="info-tree">
+            <div class="card hidden">
+                <div class="card-icon">💖</div>
+                <h3>Chúc mừng sinh nhật baby</h3>
+                <p>Chúc vợ yêu của anh sang tuổi mới ngày càng xinh đẹp hơn, mạnh khỏe hơn, yêu Nam nhiều hơn nữa nhá <3.</p>
+            </div>
+            
+            <div class="card hidden">
+                <div class="card-icon">✨</div>
+                <h3>Những điều Nam muốn nói:</h3>
+                <p>Cảm ơn baby vì đã ở cạnh anh suốt thời gian vừa qua, chăm chút tới anh, để ý từng chút tới mối quan hệ của hai đứa chúng mình. Cảm ơn baby vì tất cả <3.</p>
+            </div>
+
+            <div class="card hidden">
+                <div class="card-icon">🥂</div>
+                <h3>Nam xin hứa trước rằng:</h3>
+                <p>Năm tiếp theo của chúng ta là một cuộc chiến dài, trường kỳ và gian khổ. Nam thực sự mong rằng em bé của nam sẽ cùng nam vượt qua tất cả, cùng nhau đạt tới đỉnh vinh quang, đưa em tới trường đại học phù hợp với em bé nhất <3.</p>
+            </div>
+        </div>
+
+        <section class="gallery-section hidden">
+            <h2 class="glowing-text-main">Những bức ảnh đáng yêu của vợ Nam</h2>
+            <div class="photo-gallery">
+                <img src="https://i.postimg.cc/ZRXv17V1/image1.jpg" data-full-src="https://i.postimg.cc/ZRXv17V1/image1.jpg" alt="Kỷ niệm 1">
+                <img src="https://i.imgur.com/example2.jpg" data-full-src="https://i.imgur.com/example2.jpg" alt="Kỷ niệm 2">
+                <img src="https://i.imgur.com/example3.jpg" data-full-src="https://i.imgur.com/example3.jpg" alt="Kỷ niệm 3">
+                <img src="https://i.imgur.com/example4.jpg" data-full-src="https://i.imgur.com/example4.jpg" alt="Kỷ niệm 4">
+                <img src="https://i.imgur.com/sC5v2gE.jpeg" data-full-src="https://i.imgur.com/sC5v2gE.jpeg" alt="Kỷ niệm 5">
+                <img src="https://i.imgur.com/x4s5TfH.jpeg" data-full-src="https://i.imgur.com/x4s5TfH.jpeg" alt="Kỷ niệm 6">
+            </div>
+        </section>
+        
+        <div class="music-section hidden">
+            <button id="music-button">Bật Giai Điệu Của Chúng Ta 🎵</button>
+            <audio id="background-music" src="https://github.com/hoangtran0410/files_for_project/raw/main/something_just_like_this.mp3" loop></audio>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
